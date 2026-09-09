@@ -147,7 +147,7 @@ pip install -r requirements.txt
 Clone the repository:
 
 ```bash
-git clone https://github.com/Prachityagi12/toric-code-qec.git
+git clone https://github.com/Prachityagi12/topological-qec.git
 ```
 
 Navigate to the project directory:
