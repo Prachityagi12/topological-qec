@@ -153,7 +153,7 @@ git clone https://github.com/Prachityagi12/toric-code-qec.git
 Navigate to the project directory:
 
 ```bash
-cd toric-code-qec
+cd topological-qec
 ```
 
 Install the required dependencies:
