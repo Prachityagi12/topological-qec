@@ -109,24 +109,68 @@ The three-qubit test demonstrates that the decoder can successfully correct many
 
 ## Results
 
-The logical error rate was evaluated for physical error probabilities ranging from `p = 0.01` to `p = 0.10`.
+## Results
+
+The implementation was validated using exhaustive error testing and Monte Carlo simulations for a toric code with code distance `d = 5`, corresponding to a `[[50,2,5]]` quantum error-correcting code.
+
+### Error Correction Validation
+
+- **Single-qubit errors:** 150/150 errors corrected successfully.
+- **Two-qubit errors:** 11,025/11,025 errors corrected successfully.
+- **Three-qubit errors:** 999/1,000 errors corrected successfully, with 1 logical error.
+- **Decoder failures:** No decoder failures were observed in the tested cases.
+
+The exhaustive single- and two-qubit tests confirm that all tested errors of weight up to two were successfully corrected, consistent with the code distance `d = 5`.
+
+### Monte Carlo Simulation
+
+The logical error rate was evaluated for physical error probabilities ranging from `p = 0.01` to `p = 0.10`, using 1,000 trials for each error probability.
 
 The results show that the logical error rate increases as the physical error probability increases.
 
-| Physical Error Probability | Logical Error Rate |
-| -------------------------: | -----------------: |
-|                       0.01 |              0.000 |
-|                       0.02 |              0.001 |
-|                       0.03 |              0.004 |
-|                       0.04 |              0.008 |
-|                       0.05 |              0.016 |
-|                       0.06 |              0.030 |
-|                       0.07 |              0.046 |
-|                       0.08 |              0.072 |
-|                       0.09 |              0.103 |
-|                       0.10 |              0.141 |
+| **Physical Error Probability** | **Logical Error Rate** |
+|---:|---:|
+| 0.01 | 0.000 |
+| 0.02 | 0.000 |
+| 0.03 | 0.003 |
+| 0.04 | 0.009 |
+| 0.05 | 0.014 |
+| 0.06 | 0.030 |
+| 0.07 | 0.049 |
+| 0.08 | 0.074 |
+| 0.09 | 0.106 |
+| 0.10 | 0.142 |
 
-The corresponding plot shows the relationship between the physical error probability and the logical error rate.
+### Decoder Failure Rate
+
+The decoder failure rate was also evaluated over the same range of physical error probabilities. No decoder failures were observed in the tested Monte Carlo simulations.
+
+| **Physical Error Probability** | **Decoder Failure Rate** |
+|---:|---:|
+| 0.01 | 0.000 |
+| 0.02 | 0.000 |
+| 0.03 | 0.000 |
+| 0.04 | 0.000 |
+| 0.05 | 0.000 |
+| 0.06 | 0.000 |
+| 0.07 | 0.000 |
+| 0.08 | 0.000 |
+| 0.09 | 0.000 |
+| 0.10 | 0.000 |
+
+The absence of decoder failures indicates that the observed failures at higher physical error probabilities are logical errors rather than failures of the decoding procedure itself.
+
+### Decoder Failure Rate Plot
+
+The following plot shows the relationship between physical error probability and decoder failure rate.
+
+![Physical Error Probability vs Decoder Failure Rate](plots/Toric_Code_Plot1.png)
+
+### Logical Error Rate Plot
+
+The following plot shows the relationship between physical error probability and logical error rate.
+
+![Physical Error Probability vs Logical Error Rate](plots/Toric_Code_Plot2.png)
 
 ## Requirements
 
